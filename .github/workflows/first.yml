@@ -10,3 +10,9 @@ jobs:
               run: nvm use && npm ci
             - name: Run tests
               run: npm run test
+    deploy:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+          - name: Deploy artifact
+            run: echo "Artifact deployed."
